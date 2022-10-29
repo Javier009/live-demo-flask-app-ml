@@ -52,11 +52,11 @@ def hello_world():
     else:
         text = request.form['text']
         random_str = uuid.uuid4().hex
-        path= f'static/{random_str}.svg'
-        model = load('model.joblib')
+        path= f'application/static/{random_str}.svg'
+        model = load('application/model.joblib')
         np_arr = floats_string_to_input_arr(text)
-        make_picture('AgesAndHeights.pkl', model, np_arr, path)
-        return render_template('index.html', href=path)
+        make_picture('application/AgesAndHeights.pkl', model, np_arr, path)
+        return render_template('index.html', href=path[4:])
 
 
 
