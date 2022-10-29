@@ -56,7 +56,7 @@ def hello_world():
         model = load('application/model.joblib')
         np_arr = floats_string_to_input_arr(text)
         make_picture('application/AgesAndHeights.pkl', model, np_arr, path)
-        return render_template('index.html', href=path[4:])
+        return render_template('index.html', href=path[12:])
 
 
 
