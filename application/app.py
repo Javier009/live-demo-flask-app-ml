@@ -52,10 +52,13 @@ def hello_world():
     else:
         text = request.form['text']
         random_str = uuid.uuid4().hex
-        path= f'application/static/{random_str}.svg'
-        model = load('application/model.joblib')
+        #path= f'application/static/{random_str}.svg'
+        path= f'/Users/delgadonoriega/Desktop/FlaskTutorialTwo/live-demo-flask-app/application/static/{random_str}.svg'
+        #model = load('live-demo-flask/application/model.joblib')
+        model= load('/Users/delgadonoriega/Desktop/FlaskTutorialTwo/live-demo-flask-app/application/model.joblib')
         np_arr = floats_string_to_input_arr(text)
-        make_picture('application/AgesAndHeights.pkl', model, np_arr, path)
+        #make_picture('live-demo-flask/application/AgesAndHeights.pkl', model, np_arr, path)
+        make_picture('/Users/delgadonoriega/Desktop/FlaskTutorialTwo/live-demo-flask-app/application/AgesAndHeights.pkl', model, np_arr, path)
         return render_template('index.html', href=path[12:])
 
 
